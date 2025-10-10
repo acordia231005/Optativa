@@ -1,13 +1,11 @@
 package com.daw.web;
 
+import com.daw.persistence.entity.task;
 import com.daw.services.taskservices;
 import com.daw.services.exceptions.TaskException;
 import com.daw.services.exceptions.TaskNotFoundException;
 
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,10 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Getter
-@Setter
 @NoArgsConstructor
-@RequestMapping("/Tareas")
+@RequestMapping("/tareas")
 public class TaskController {
 	
 	@Autowired
@@ -50,6 +46,7 @@ public class TaskController {
 	@DeleteMapping("/{idTarea}")
 	public ResponseEntity<?> delete(@PathVariable int idTarea) {
 		try {
+			this.tareaService.deleteById(idTarea);
 			return ResponseEntity.ok().build();
 		}
 		catch (TaskNotFoundException ex) {
@@ -57,22 +54,19 @@ public class TaskController {
 		}
 	}
 	@PostMapping
-	public ResponseEntity<Task> create(@RequestBody Task tarea) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(this.tareaService.create(tarea));	
-		}
-	
-	
-	@PutMapping("/{idTarea}")
-	public ResponseEntity<?> update(@PathVariable int idTarea, @RequestBody Task tarea) {
+	public ResponseEntity<?> create(@RequestBody task tarea){
 		try {
-			return ResponseEntity.ok(this.tareaService.update(idTarea, tarea));
-		}
-		catch(TaskNotFoundException ex) {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
-		}
-		catch (TaskException ex) {
-			return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
+			return ResponseEntity.status(HttpStatus.CREATED).body(this.tareaService.create(tarea));
+		} catch (TaskException ex) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
 		}
 	}
-	
+	@PutMapping("{idTarea}")
+	public ResponseEntity<?> update(@PathVariable int idTarea, @RequestBody Task tarea){
+		try {
+			return ResponseEntity.ok().build();
+		} catch (TaskNotFoundException ex) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+		}
+	}
 }
