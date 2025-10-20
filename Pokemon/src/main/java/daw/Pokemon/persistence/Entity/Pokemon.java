@@ -13,12 +13,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 public class Pokemon {
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 @Table(name = "tarea")
 public class Tarea {
 
