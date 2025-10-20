@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "6a9a4268-a230-4969-a7f9-b403a8d27b93",
+		"name": "daw-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43644372",
+		"_collection_link": "https://galactic-firefly-8336510.postman.co/workspace/Andr%C3%A9s-Jos%C3%A9-Cort%C3%A9s-D%C3%ADaz's-Works~a7410a3c-0564-4a83-8aa6-7cd21bf37837/collection/43644372-6a9a4268-a230-4969-a7f9-b403a8d27b93?action=share&source=collection_link&creator=43644372"
+	},
+	"item": [
+		{
+			"name": "FindAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/tareas",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/tareas/9",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Documentar despliegue\",\r\n    \"descripcion\": \"Octavio con su perfeccion \",\r\n    \"fechaVencimiento\": \"2026-10-23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/tareas",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Octavio\",\r\n    \"descripcion\": \"perfeccion \",\r\n    \"fechaVencimiento\": \"2020-10-23\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8085/tareas/29",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas",
+						"29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/tareas/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IniciarTarea",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\": \"Documentar despliegue\",\r\n    \"descripcion\": \"Octavio con su perfeccion \",\r\n    \"fechaVencimiento\": \"2026-10-23\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8085/tareas/3/iniciar",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas",
+						"3",
+						"iniciar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompletarTarea",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/tareas/3/completar",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas",
+						"3",
+						"completar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TareasPendientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/tareas/tareasPendientes",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas",
+						"tareasPendientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TareasEnProgreso",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/tareas/tareasEnProgreso",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas",
+						"tareasEnProgreso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TareasCompletadas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/tareas/tareasCompletadas",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas",
+						"tareasCompletadas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TareasVencidas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/tareas/tareasVencidas",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas",
+						"tareasVencidas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TareasNoVencidas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/tareas/tareasNoVencidas",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas",
+						"tareasNoVencidas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TareasMedianteTitulo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/tareas/buscarTitulo?titulo=Preparar ",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"tareas",
+						"buscarTitulo"
+					],
+					"query": [
+						{
+							"key": "titulo",
+							"value": "Preparar "
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
