@@ -2,7 +2,7 @@ package com.pokemon.persistence.Entity;
 
 import java.time.LocalDate;
 
-import com.pokemon.persistence.Entity.Enums.Capturado;
+import com.pokemon.persistence.Entity.Enums.Pokeball;
 import com.pokemon.persistence.Entity.Enums.Tipo;
 
 import jakarta.persistence.Column;
@@ -17,14 +17,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
+@NoArgsConstructor
+@Table(name = "Pokemon")
+@Getter
+@Setter
 public class Pokemon {
-	@Entity
-	@Getter
-	@Setter
-	@NoArgsConstructor
-	@Table(name = "tarea")
-	public class Tarea {
-
 			@Id
 			@GeneratedValue(strategy = GenerationType.IDENTITY)
 			private int id;
@@ -44,7 +42,6 @@ public class Pokemon {
 			private LocalDate fechaCaptura;
 			
 			@Enumerated(EnumType.STRING)
-			private Capturado capturado;
+			private Pokeball capturado;
 			
-		}
 }

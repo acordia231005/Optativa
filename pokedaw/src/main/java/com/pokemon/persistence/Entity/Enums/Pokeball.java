@@ -1,5 +1,5 @@
 package com.pokemon.persistence.Entity.Enums;
 
-public enum Capturado {
+public enum Pokeball {
 	POKEBALL, SUPERBALL, ULTRABALL
 }
