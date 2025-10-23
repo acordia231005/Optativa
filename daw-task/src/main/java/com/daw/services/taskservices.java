@@ -99,11 +99,9 @@ public class taskservices {
 	public List<Tarea> obtenerTareasPendientes(){
 		return this.taskRepository.findByEstado(Estado.PENDIENTE);
 	}
-	
 	public List<Tarea> obtenerTareasEnProgreso(){
 		return this.taskRepository.findByEstado(Estado.EN_PROGRESO);
 	}
-	
 	public List<Tarea> obtenerTareasCompletada(){
 		return this.taskRepository.findByEstado(Estado.COMPLETADA);
 	}
