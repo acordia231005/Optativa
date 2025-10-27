@@ -2,9 +2,7 @@ package com.pokemon.web;
 
 import java.time.LocalDate;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -94,7 +92,7 @@ public class PokemonController {
 		}
 	}
 	
-	public ResponseEntity<?> cambiarTipo(@PathVariable int id,@RequestParam String tipo1,@RequestParam String tipo2){
+	public ResponseEntity<?> cambiarTipo(@PathVariable int id,@RequestParam String tipo1,@RequestParam(required = false) String tipo2){
 		try {
 			return ResponseEntity.ok(this.pokemonServices.cambiarTipo(id, tipo1, tipo2));
 		} catch (pokemonException ex) {

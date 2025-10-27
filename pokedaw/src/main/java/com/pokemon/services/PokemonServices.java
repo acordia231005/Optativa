@@ -78,33 +78,42 @@ public class PokemonServices {
 	}
 	
 	public List<Pokemon> FindByRangoFechas(LocalDate start, LocalDate end) {
-		return this.pokemonRepository.findByCapturadoByFechaCapturaBetween(start, end);
+		return this.pokemonRepository.findByFechaCapturaBetween(start, end);
 	}
 	
-	public List<Pokemon> FindByTipo(String tipo) {
+	public List<Pokemon> FindByTipo(int id, String tipo1, String tipo2) {
+		Tipo tip0 = Tipo.valueOf(tipo1.toUpperCase());
+		Tipo tipo = Tipo.valueOf(tipo2.toUpperCase());
+		
+		Pokemon pokemon = this.findById(id);
+		
+		
+		
+		
 		return this.pokemonRepository.findByTipo1OrTipo2(tipo);
+	
+		
 	}
 	
 	public Pokemon cambiarTipo(int id, String tipo1, String tipo2) {	
-		try {
-			Tipo tip0 = Tipo.valueOf(tipo1.toUpperCase());
-			Tipo tipo = Tipo.valueOf(tipo2.toUpperCase());
-			
-			Pokemon pokemon = this.findById(id);
-			if (pokemon == null) {
-				throw new IllegalArgumentException();
+			try {
+				Tipo t1 = Tipo.valueOf(tipo1.toUpperCase());
+				Tipo t2;
+				if (tipo2 != null) {
+					t2 = Tipo.valueOf(tipo2.toUpperCase());
+				}else {
+					t2 = Tipo.NINGUNO;
+				}
+				if (t1.equals(t2)) {
+					throw new pokemonException("No pueden ser iguales. ");
+				}
+				Pokemon pokemon = this.findById(id);
+				pokemon.setTipo1(t1);
+		        pokemon.setTipo2(t2);
+				return this.pokemonRepository.save(pokemon);
+				
+			} catch (Exception e) {
+				
 			}
-			
-			
-			pokemon.setTipo1(tip0);
-	        pokemon.setTipo2(tipo);
-			
-			return this.pokemonRepository.save(pokemon);
-		} catch (pokemonException ex) {
-			System.err.println("Error al cambiar tipo: " + ex.getMessage());
-			return null;
-
-		}
-		
 	}
 }
