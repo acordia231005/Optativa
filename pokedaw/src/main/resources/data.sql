@@ -1,0 +1,17 @@
+INSERT INTO pokemon (numero_pokedex, nombre, tipo1, tipo2, fecha_captura, capturado) VALUES
+(1, 'Bulbasaur', 'PLANTA', 'VENENO', '2024-05-10', 'POKEBALL'),
+(4, 'Charmander', 'FUEGO', 'NINGUNO', '2024-05-12', 'SUPERBALL'),
+(7, 'Squirtle', 'AGUA', 'NINGUNO', '2024-05-15', 'ULTRABALL'),
+(12, 'Butterfree', 'BICHO', 'VOLADOR', '2024-06-01', 'POKEBALL'),
+(16, 'Pidgey', 'NORMAL', 'VOLADOR', '2024-06-05', 'POKEBALL'),
+(25, 'Pikachu', 'ELECTRICO', 'NINGUNO', '2024-06-07', 'SUPERBALL'),
+(37, 'Vulpix', 'FUEGO', 'NINGUNO', '2024-06-08', 'POKEBALL'),
+(50, 'Diglett', 'TIERRA', 'NINGUNO', '2024-06-10', 'ULTRABALL'),
+(63, 'Abra', 'PSIQUICO', 'NINGUNO', '2024-06-12', 'POKEBALL'),
+(66, 'Machop', 'LUCHA', 'NINGUNO', '2024-06-14', 'SUPERBALL'),
+(92, 'Gastly', 'FANTASMA', 'VENENO', '2024-06-15', 'ULTRABALL'),
+(95, 'Onix', 'ROCA', 'TIERRA', '2024-06-18', 'SUPERBALL'),
+(120, 'Staryu', 'AGUA', 'NINGUNO', '2024-06-20', 'POKEBALL'),
+(131, 'Lapras', 'AGUA', 'HIELO', '2024-06-22', 'ULTRABALL'),
+(143, 'Snorlax', 'NORMAL', 'NINGUNO', '2024-06-25', 'POKEBALL'),
+(149, 'Dragonite', 'DRAGON', 'VOLADOR', '2024-06-30', 'ULTRABALL');
