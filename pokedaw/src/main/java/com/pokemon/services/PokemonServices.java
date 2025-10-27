@@ -87,16 +87,24 @@ public class PokemonServices {
 	
 	public Pokemon cambiarTipo(int id, String tipo1, String tipo2) {	
 		try {
-			Tipo tip0 = Tipo.valueOf(tipo1);
-			Tipo tipo = Tipo.valueOf(tipo2);
+			Tipo tip0 = Tipo.valueOf(tipo1.toUpperCase());
+			Tipo tipo = Tipo.valueOf(tipo2.toUpperCase());
+			
+			Pokemon pokemon = this.findById(id);
+			if (pokemon == null) {
+				throw new IllegalArgumentException();
+			}
+			
+			
+			pokemon.setTipo1(tip0);
+	        pokemon.setTipo2(tipo);
+			
+			return this.pokemonRepository.save(pokemon);
 		} catch (pokemonException ex) {
-			return 
-// 
+			System.err.println("Error al cambiar tipo: " + ex.getMessage());
+			return null;
+
 		}
-		Pokemon pokemon = this.findById(id);
-		pokemon.setTipo1(tipo1);
-		pokemon.setTipo2(tipo2);
 		
-		return this.pokemonRepository.save(pokemon);
 	}
 }
